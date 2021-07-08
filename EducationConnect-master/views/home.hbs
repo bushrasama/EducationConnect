@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>EducationConnect</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Favicons -->
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="animate.min.css" rel="stylesheet" />
+    <link href="aos.css" rel="stylesheet" />
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap-icons.css" rel="stylesheet" />
+    <link href="boxicons.min.css" rel="stylesheet" />
+    <link href="glightbox.min.css" rel="stylesheet" />
+    <link href="swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="style1.css" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: Moderna - v4.2.0
+  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <h1 class="text-light">
+                    <a href="#"><span>Education<br />Connect</span></a>
+          </h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          {{!-- <a href="index.html"><img src="logo.png" alt="" class="img-fluid"></a> --}}
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul>
+                    <li><a class="active" href="../home">Home</a></li>
+                    <li><a href="../newuser/index2">Video Chat</a></li>
+                    <li><a href="../newuser/chat">Chat</a></li>
+                    {{#if user}}
+                    <li class="dropdown"><a href="#">{{user.username}}</a>
+                    <li>    <a href="/newuser/logout"> LogOut</a>
+                    </li></li>
+                    {{else}}
+                    <li><a href="/newuser/signin">Login</a></li>
+                    {{/if}}
+            </nav>
+            <!-- .navbar -->
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex justify-cntent-center align-items-center">
+        <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="carousel-container">
+                    <p class="animate__animated animate__fadeInUp">
+                        “Education is the most powerful weapon which you can use to change the world” – Nelson Mandela.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="carousel-container">
+                    <p class="animate__animated animate__fadeInUp">
+                        “Live as if you were to die tomorrow. Learn as if you were to live forever” – Mahatma Gandhi
+                    </p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="carousel-container">
+                    <p class="animate__animated animate__fadeInUp">
+                        “Teachers open the door, but you must enter by yourself” – Chinese Proverb
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- End Hero -->
+
+    <main id="main">
+        <!-- ======= Services Section ======= -->
+        <!-- End Services Section -->
+
+        <!-- ======= Features Section ======= -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Features</h2>
+                    <p></p>
+                </div>
+
+                <div class="row" data-aos="fade-up">
+                    <div class="col-md-5">
+                        <img src="video_calling.jpg" class="img-fluid" alt="" />
+                    </div>
+                    <div class="col-md-7 pt-4">
+                        <h3>
+                            From projectors to smart screens and everything in between, technology has changed classroom learning as we know it.
+                        </h3>
+                        <ul>
+                            <li>
+                                <i class="bi bi-check"></i> Video Calling for better understanding
+                            </li>
+                            <li>
+                                <i class="bi bi-check"></i>Better quality interactions between students and tutors
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row" data-aos="fade-up">
+                    <div class="col-md-5 order-1 order-md-2">
+                        <img src="chat.jpg" class="img-fluid" alt="" />
+                    </div>
+                    <div class="col-md-7 pt-5 order-2 order-md-1">
+                        <h3>Better Learning Experience</h3>
+
+                        <p>Chat with the tutors and enhance your learning.</p>
+                    </div>
+                </div>
+
+
+        </section>
+        <!-- End Features Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li>
+                                <i class="bx bx-chevron-right"></i> <a href="/newuser/home">Home</a>
+                            </li>
+                            <li>
+                                <i class="bx bx-chevron-right"></i> <a href="/newuser/chat">Chat</a>
+                            </li>
+                            <li>
+                                <i class="bx bx-chevron-right"></i> <a href="/newuser/index2">Video Chat</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-18 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            A108 Luxuria Enclave <br /> Ahmedabad,380015
+                            <br /> Gujarat <br /><br />
+                            <strong>Phone:</strong> 9994040488<br />
+                            <strong>Email:</strong> educonnect@example.com<br />
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>EducationConnect</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
+    
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="aos.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="glightbox.min.js"></script>
+    <script src="isotope.pkgd.min.js"></script>
+    <script src="validate.js"></script>
+    <script src="purecounter.js"></script>
+    <script src="swiper-bundle.min.js"></script>
+    <script src="noframework.waypoints.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="main.js"></script>
+  </body>
+</html>

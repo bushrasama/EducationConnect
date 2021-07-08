@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Video App</title>
+    <style media="screen">
+        * {
+            margin: 0;
+        }
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+body{
+    background-color: black;
+
+}
+:root {
+  --main-darklg: #1d2635;
+  --main-dark: #161d29;
+  --primary-color: #2f80ec;
+  --main-light: #eeeeee;
+  font-family: "Poppins", sans-serif;
+}
+        #videoDiv {
+            display: grid;
+            grid-gap: 10px;
+            height: 80%;
+            flex-wrap: nowrap;
+            position: relative;
+            grid-template-columns: repeat(auto-fill, 400px);
+            grid-auto-rows: 400px;
+        }
+        
+        #footer {
+            width: 100%;
+            height: 50px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            flex: 1;
+            border-bottom: 1px solid grey;
+            margin-top: 10px;
+        }
+        
+        
+        
+            video {
+                height: 300px;
+                border-color: white;
+                border-width: 2px;
+                border-radius: 1rem;
+                margin: 0.5rem;
+                width: 400px;
+                object-fit: cover;
+                transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
+                -moz-transform: rotateY(180deg);
+            }
+            .options {
+  padding: 1rem;
+  display: flex;
+  background-color: var(--main-darklg);
+}
+
+.options__left {
+  display: flex;
+}
+
+.options__right {
+  margin-left: auto;
+}
+
+.options__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  height: 50px;
+  border-radius: 5px;
+  color: var(--main-light);
+  font-size: 1.2rem;
+  width: 50px;
+  margin: 0 0.5rem;
+}
+
+.background__red {
+  background-color: #f6484a;
+}
+    </style>
+    <script type="text/javascript">
+        var roomID = "{{RoomId }}"
+    </script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <script src="socket.io/socket.io.js" defer></script>
+    <script src="index2.js" charset="utf-8" defer></script>
+     <!-- Vendor CSS Files -->
+    <link href="animate.min.css" rel="stylesheet" />
+    <link href="aos.css" rel="stylesheet" />
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap-icons.css" rel="stylesheet" />
+    <link href="boxicons.min.css" rel="stylesheet" />
+    <link href="glightbox.min.css" rel="stylesheet" />
+    <link href="swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="style1.css" rel="stylesheet" />
+</head>
+
+<body><!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <h1 class="text-light">
+                    <a href="#"><span>Education<br />Connect</span></a>
+          </h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          {{!-- <a href="index.html"><img src="logo.png" alt="" class="img-fluid"></a> --}}
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul>
+                    <li><a href="../newuser/home">Home</a></li>
+                    <li><a class="active" href="../newuser/index2">Video Chat</a></li>
+                    <li><a href="../newuser/chat">Chat</a></li>
+                    {{#if user}}
+                    <li class="dropdown"><a href="#">{{user.username}}</a>
+                    <li>    <a href="/newuser/logout"> LogOut</a>
+                    </li></li>
+                    {{else}}
+                    <li><a href="/newuser/signin">Login</a></li>
+                    {{/if}}
+            </nav>
+            <!-- .navbar -->
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex justify-cntent-center align-items-center">
+        <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="carousel-container">
+                    <p class="animate__animated animate__fadeInUp">
+                        “Education is the most powerful weapon which you can use to change the world” – Nelson Mandela.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="carousel-container">
+                    <p class="animate__animated animate__fadeInUp">
+                        “Live as if you were to die tomorrow. Learn as if you were to live forever” – Mahatma Gandhi
+                    </p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="carousel-container">
+                    <p class="animate__animated animate__fadeInUp">
+                        “Teachers open the door, but you must enter by yourself” – Chinese Proverb
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- End Hero -->
+    <main id="main">
+        <!-- ======= Services Section ======= -->
+        <!-- End Services Section -->
+    
+    <div id="videoDiv">
+
+    </div>
+    <div class="options">
+        <div class="options__left">
+          <div id="stopVideo" class="options__button">
+            <i class="fa fa-video-camera"></i>
+          </div>
+          <div id="muteButton" class="options__button">
+            <i class="fa fa-microphone"></i>
+          </div>
+        </div>
+        <div class="options__right">
+          <div id="inviteButton" class="options__button">
+            <i class="fas fa-user-plus"></i>
+          </div>
+        </div>
+      </div>
+      </main>
+</body>
+
+</html>
